@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚨 UPA System Alert: Phone Number Check</title>
+    <style>
+        /* Basic styling to make it look official-ish and dramatic */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #1f1f1f;
+            padding: 40px;
+            border: 3px solid #ff4500; /* Dramatic orange/red border */
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.7);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: #ff4500;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        p {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        input[type="tel"] {
+            padding: 10px;
+            margin-right: 10px;
+            border: 2px solid #555;
+            background-color: #000;
+            color: #0f0; /* Green text for a terminal look */
+            border-radius: 5px;
+            width: 60%;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e03c00;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #ff0000; /* Red for the 'ban' */
+            font-weight: bold;
+            display: none; /* Hidden until the button is clicked */
+            padding: 15px;
+            background-color: #300000;
+            border: 1px solid #ff0000;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🚨 UPA Galactic Comms Scanner v7.2 🚨</h1>
+    <p>Please enter your Earth-based communication sequence (Phone Number) for **Universal Status Verification**.</p>
+    
+    <input type="tel" id="phoneNumber" placeholder="e.g., 555-PRANK-ME" maxlength="15">
+    <button onclick="checkStatus()">Check Status</button>
+    
+    <div id="result">
+        </div>
+
+    <p style="font-size: 0.8em; margin-top: 30px; color: #777;">**Note:** This is a diagnostic tool from the Universal Prank Authority (UPA) and is for entertainment purposes only. Please do not panic.</p>
+
+</div>
+
+<script>
+    function checkStatus() {
+        const numberInput = document.getElementById('phoneNumber');
+        const resultDiv = document.getElementById('result');
+        const phoneNumber = numberInput.value.trim();
+
+        if (phoneNumber === "") {
+            resultDiv.innerHTML = "🛑 **ERROR:** No sequence detected. Please input a number.";
+            resultDiv.style.color = '#ff0000';
+        } else {
+            // The prank message!
+            resultDiv.innerHTML = `
+                <span style="color: #ff4500;">ACCESS DENIED:</span> <span style="color: #e0e0e0;">Sequence **${phoneNumber}**</span><br>
+                <span style="color: #ff0000; font-size: 1.5em;">TEMPORARILY BANNED</span><br>
+                <span style="font-size: 0.9em;">Reason: Excessive Earth-based Communication Fun<br>
+                **Reactivation ETA: 30 Galactic Minutes** (approx. 30 Earth Minutes)<br>
+                Status: Awaiting Celestial Cooldown Protocol.
+            `;
+            resultDiv.style.color = '#ff0000'; // Ensure the background text is red
+        }
+        
+        resultDiv.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
